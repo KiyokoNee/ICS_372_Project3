@@ -12,8 +12,6 @@ import java.util.List;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
-import org.json.simple.*;
-import org.json.simple.parser.*;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.w3c.dom.Document;
