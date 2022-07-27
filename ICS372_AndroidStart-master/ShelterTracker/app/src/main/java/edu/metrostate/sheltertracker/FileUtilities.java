@@ -4,13 +4,18 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
+import org.json.simple.*;
+import org.json.simple.parser.*;
 import org.json.JSONArray;
+import org.json.JSONObject;
 import org.w3c.dom.Document;
 
 public class FileUtilities {
@@ -21,10 +26,14 @@ public class FileUtilities {
      * @return (JSONArray) - animals parsed from json input file
      */
     public static JSONArray readJSON(String filename) {
-        JSONParser parser = new JSONParser();
         try {
             FileReader inputFile = new FileReader(filename);
-            JSONObject obj = (JSONObject) parser.parse(inputFile);
+            StringBuffer sb = new StringBuffer();
+            for(String s : Files.readAllLines(Paths.get(new File(filename).getPath()))) {
+                sb.append(s);
+            }
+
+            JSONObject obj = new JSONObject(sb.toString());//JSONObject) parser.parse(inputFile);
             return (JSONArray) obj.get("shelter_roster");
         } catch (Exception e) {
             e.printStackTrace();
@@ -45,33 +54,35 @@ public class FileUtilities {
         for (Shelter currentShelter : allShelters) {
             JSONObject currentShelterData = new JSONObject();
             JSONArray animalsInShelterData = new JSONArray();
+            try {
 
-            currentShelterData.put("shelter_id", currentShelter.getShelterID());
-            currentShelterData.put("shelter_name", currentShelter.getShelterName());
-            currentShelterData.put("shelter_receiving", currentShelter.isReceiving());
-            for (int j = 0; j < currentShelter.size(); j++) {
-                Animal currentAnimal = currentShelter.getAnimalList().get(j);
-                JSONObject currentAnimalData = new JSONObject();
 
-                try {
-                    currentAnimalData.put("animal_type", currentAnimal.getAnimal_Type());
-                    currentAnimalData.put("animal_name", currentAnimal.getAnimal_Name());
-                    currentAnimalData.put("animal_id", currentAnimal.getAnimal_ID());
-                    currentAnimalData.put("weight", currentAnimal.getAnimal_weight());
-                    currentAnimalData.put("weight_unit", currentAnimal.getWeight_unit());
-                    currentAnimalData.put("receipt_date", currentAnimal.getReceipt_date());
-                } catch (Exception e) {
-                    System.out.println("File creation unsuccessful");
+                currentShelterData.put("shelter_id", currentShelter.getShelterID());
+                currentShelterData.put("shelter_name", currentShelter.getShelterName());
+                currentShelterData.put("shelter_receiving", currentShelter.isReceiving());
+                for (int j = 0; j < currentShelter.size(); j++) {
+                    Animal currentAnimal = currentShelter.getAnimalList().get(j);
+                    JSONObject currentAnimalData = new JSONObject();
+
+                        currentAnimalData.put("animal_type", currentAnimal.getAnimal_Type());
+                        currentAnimalData.put("animal_name", currentAnimal.getAnimal_Name());
+                        currentAnimalData.put("animal_id", currentAnimal.getAnimal_ID());
+                        currentAnimalData.put("weight", currentAnimal.getAnimal_weight());
+                        currentAnimalData.put("weight_unit", currentAnimal.getWeight_unit());
+                        currentAnimalData.put("receipt_date", currentAnimal.getReceipt_date());
+                    animalsInShelterData.put(currentAnimalData);
                 }
-                animalsInShelterData.add(currentAnimalData);
+                currentShelterData.put("animals", animalsInShelterData);
+                sheltersToWrite.put(currentShelterData);
+
+            fileData.put("shelter_roster", sheltersToWrite);
+            } catch(Exception e){
+
             }
-            currentShelterData.put("animals", animalsInShelterData);
-            sheltersToWrite.add(currentShelterData);
         }
-        fileData.put("shelter_roster", sheltersToWrite);
 
         try (FileWriter file = new FileWriter(filename)) {
-            file.write(fileData.toJSONString());
+            file.write(fileData.toString());
             file.flush();
         } catch (IOException e) {
             e.printStackTrace();

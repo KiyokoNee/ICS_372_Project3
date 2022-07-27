@@ -1,7 +1,8 @@
 package edu.metrostate.sheltertracker;
 
-
 import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -17,7 +18,13 @@ public class ParseUtilities {
         JSONArray j = FileUtilities.readJSON(filename);
 //      https://howtodoinjava.com/java/library/json-simple-read-write-json-examples/
         assert j != null;
-        j.forEach(animal -> parseAnimalObject( (JSONObject) animal, shelters));
+        for (int i = 0; i < j.length(); i++) {
+            try {
+                parseAnimalObject(j.getJSONObject(i),shelters);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     /**
@@ -26,29 +33,34 @@ public class ParseUtilities {
      * @param animal - (JSONObject) converted into an ShelterModules.Animal Object.
      */
     private static void parseAnimalObject(JSONObject animal, ShelterList shelters) {
-        String shelter_id = (String) animal.get("shelter_id");
-        String animal_type = (String) animal.get("animal_type");
-        String animal_name = (String) animal.get("animal_name");
-        String animal_id = (String) animal.get("animal_id");
-        Object temp = animal.get("weight");
-        double animal_weight;
+        try {
+            String shelter_id = (String) animal.get("shelter_id");
 
-        // checks incoming weight value and converts value to double
-        if(temp instanceof Double){
-            animal_weight = (Double) temp;
-        } else {
-            animal_weight = ((Long) temp).doubleValue();
-        }
-        long receipt_date = (long) animal.get("receipt_date");
+            String animal_type = (String) animal.get("animal_type");
+            String animal_name = (String) animal.get("animal_name");
+            String animal_id = (String) animal.get("animal_id");
+            Object temp = animal.get("weight");
+            double animal_weight;
 
-        // if type is valid, creates ShelterModules.Animal and add to correct ShelterModules.Shelter. Creates shelter if it doesn't exist
-        if (shelters.validAnimal(animal_type)) {
-            Animal tempAnimal = new Animal(animal_type, animal_name, animal_id, animal_weight, "", receipt_date);
-            if (!shelters.containsShelter(shelter_id)) {
-                Shelter tempShelter = new Shelter(shelter_id);
-                shelters.addShelter(shelter_id, tempShelter);
+            // checks incoming weight value and converts value to double
+            if (temp instanceof Double) {
+                animal_weight = (Double) temp;
+            } else {
+                animal_weight = ((Long) temp).doubleValue();
             }
-            shelters.addAnimalToShelter(shelter_id, tempAnimal);
+            long receipt_date = (long) animal.get("receipt_date");
+
+            // if type is valid, creates ShelterModules.Animal and add to correct ShelterModules.Shelter. Creates shelter if it doesn't exist
+            if (shelters.validAnimal(animal_type)) {
+                Animal tempAnimal = new Animal(animal_type, animal_name, animal_id, animal_weight, "", receipt_date);
+                if (!shelters.containsShelter(shelter_id)) {
+                    Shelter tempShelter = new Shelter(shelter_id);
+                    shelters.addShelter(shelter_id, tempShelter);
+                }
+                shelters.addAnimalToShelter(shelter_id, tempAnimal);
+            }
+        } catch (Exception e){
+
         }
     }
 
@@ -65,8 +77,8 @@ public class ParseUtilities {
             return new HashMap<>();
         }
         try {
-            for (Object tempShelter : shelters.toArray()) {
-                JSONObject shelter = (JSONObject) tempShelter;
+            for (int i = 0; i <shelters.length(); i++) {
+                JSONObject shelter = shelters.getJSONObject(i);
                 String id = (String) shelter.get("shelter_id");
                 String name = (String) shelter.get("shelter_name");
                 boolean receiving = (Boolean) shelter.get("shelter_receiving");
@@ -74,8 +86,8 @@ public class ParseUtilities {
                 Shelter currShelter = new Shelter(id, name);
 
                 JSONArray animalList = (JSONArray) shelter.get("animals");
-                for (Object tempAnimal : animalList) {
-                    JSONObject animal = (JSONObject) tempAnimal;
+                for (int j = 0; j < animalList.length(); j++) {
+                    JSONObject animal = shelters.getJSONObject(j);
                     String aniType = (String) animal.get("animal_type");
                     String aniName = (String) animal.get("animal_name");
                     String aniID = (String) animal.get("animal_id");
