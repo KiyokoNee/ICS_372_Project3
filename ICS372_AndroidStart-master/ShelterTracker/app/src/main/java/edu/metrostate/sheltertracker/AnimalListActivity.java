@@ -1,13 +1,13 @@
 package edu.metrostate.sheltertracker;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.widget.ListView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.List;
 
-public class ShelterListActivity extends AppCompatActivity {
+public class AnimalListActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

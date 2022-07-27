@@ -11,7 +11,7 @@ import java.util.List;
 
 public class ShelterTrackerApplication extends Application {
 
-    private final List<Shelter> shelterList = new ArrayList<>();
+    private final ShelterList shelterList = new ShelterList();
 
     @Override
     public void onCreate() {
@@ -26,7 +26,7 @@ public class ShelterTrackerApplication extends Application {
         writeFile();
     }
 
-    public List<Shelter> getShelterList() {
+    public ShelterList getShelterList() {
         return shelterList;
     }
 

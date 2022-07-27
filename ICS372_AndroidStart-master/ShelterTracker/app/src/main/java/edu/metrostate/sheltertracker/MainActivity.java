@@ -23,27 +23,32 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showAllAnimals(View view){
-
+        Intent intent = new Intent(this, AnimalListActivity.class);
+        startActivity(intent);
     }
 
-    public void showAnimalsInShelter(View view){
+    public void showAnimalsInShelter(View view){ //combine this with showShelterList?
 
     }
 
     public void addAnimal(View view){
-
+        Intent intent = new Intent(this, AddAnimalActivity.class);
+        startActivity(intent);
     }
 
     public void importJSON(View view){
-
+        Intent intent = new Intent(this, ImportJSONActivity.class);
+        startActivity(intent);
     }
 
     public void importXML(View view){
-
+        Intent intent = new Intent(this, ImportXMLActivity.class);
+        startActivity(intent);
     }
 
     public void exportShelterList(View view){
-
+        Intent intent = new Intent(this, ExportActivity.class);
+        startActivity(intent);
     }
 
     public void showDialog(View view) {
