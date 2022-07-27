@@ -2,26 +2,70 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/animals_by_shelter_button"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity"
-    android:padding="10dp">
+    android:padding="10dp"
+    tools:context=".MainActivity">
 
     <Button
         android:id="@+id/show_shelter_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="showShelterList"
         android:text="Show Shelter List"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/show_all_animals_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:textSize="30sp"
-        android:onClick="showShelterList"/>
+        android:text="Show All Animals" />
+
+    <Button
+        android:id="@+id/animal_by_shelter_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:text="See Animals In shelter" />
 
     <Button
         android:id="@+id/show_dialog_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="30sp"
+        android:onClick="showDialog"
         android:text="Show Dialog"
-        android:onClick="showDialog"/>
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/add_new_animal_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Animal"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/import_JSON_button"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:text="Import JSON"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/import_XML_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Import XML"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/exit_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Exit"
+        android:textSize="30sp" />
+
 
 </LinearLayout>
