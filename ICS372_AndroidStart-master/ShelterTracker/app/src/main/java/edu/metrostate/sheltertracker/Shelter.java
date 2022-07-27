@@ -101,4 +101,8 @@ public class Shelter {
             animalList.add(animal);
         }
     }
+
+    public String getShelterId() {
+        return this.shelterID;
+    }
 }
