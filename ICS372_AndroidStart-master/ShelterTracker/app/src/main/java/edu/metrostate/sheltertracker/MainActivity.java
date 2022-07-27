@@ -22,6 +22,30 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void showAllAnimals(View view){
+
+    }
+
+    public void showAnimalsInShelter(View view){
+
+    }
+
+    public void addAnimal(View view){
+
+    }
+
+    public void importJSON(View view){
+
+    }
+
+    public void importXML(View view){
+
+    }
+
+    public void exportShelterList(View view){
+
+    }
+
     public void showDialog(View view) {
 
         Dialog dialog = new AlertDialog.Builder(this).setTitle("My alert").setCancelable(false)
