@@ -58,7 +58,4 @@ public class ShelterTrackerApplication extends Application {
         return String.join("", temp_list);
 
     }
-
-
-
 }
