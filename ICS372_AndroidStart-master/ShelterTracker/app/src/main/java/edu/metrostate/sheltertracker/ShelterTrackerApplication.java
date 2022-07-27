@@ -16,9 +16,13 @@ public class ShelterTrackerApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        for(int i = 0; i < 20; i++) {
-            shelterList.add(new Shelter(Integer.toString(i), "Shelter Number " + i));
-        }
+        //TODO: call parser to decode JSON string to list
+        //TODO: add elements to list
+
+
+//        for(int i = 0; i < temp_list.size(); i++) {
+//            shelterList.add(new Shelter(temp_list.get(i)));
+//        }
         writeFile();
     }
 
@@ -44,6 +48,14 @@ public class ShelterTrackerApplication extends Application {
         } catch (IOException ex) {
             Log.e("FileCreation", "Error creating file", ex);
         }
+
+    }
+
+    public String readFile() throws IOException {
+        File path = getExternalFilesDir(null);
+//        File file = new File(path);
+        List <String> temp_list = Files.readAllLines(path.toPath());
+        return String.join("", temp_list);
 
     }
 
