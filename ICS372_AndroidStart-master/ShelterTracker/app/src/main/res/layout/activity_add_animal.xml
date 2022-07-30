@@ -10,6 +10,7 @@
         android:id="@+id/title_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         android:text="Add Animal"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -17,8 +18,8 @@
         android:id="@+id/nameInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/title_text"
-        android:layout_marginBottom="-107dp"
+        android:layout_below="@id/title_text"
+        android:layout_marginBottom="20dp"
         android:background="#CCCCCC"
         android:ems="10"
         android:hint="Name"
@@ -32,8 +33,8 @@
         android:id="@+id/idInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/nameInput"
-        android:layout_marginBottom="-107dp"
+        android:layout_below="@id/nameInput"
+        android:layout_marginBottom="20dp"
         android:background="#CCCCCC"
         android:ems="10"
         android:hint="ID"
@@ -47,8 +48,8 @@
         android:id="@+id/editText1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/idInput"
-        android:layout_marginBottom="-107dp"
+        android:layout_below="@id/idInput"
+        android:layout_marginBottom="20dp"
         android:background="#CCCCCC"
         android:ems="10"
         android:hint="Weight"
@@ -61,8 +62,7 @@
     <RadioGroup
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:layout_alignTop="@id/editText1"
-        android:layout_marginBottom="-107dp">
+        android:layout_below="@id/editText1">
 
         <RadioButton
             android:id="@+id/radio_lb"
