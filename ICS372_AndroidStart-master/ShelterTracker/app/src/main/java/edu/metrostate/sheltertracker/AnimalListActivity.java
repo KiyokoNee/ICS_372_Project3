@@ -34,8 +34,8 @@ public class AnimalListActivity extends AppCompatActivity {
         }
         ListView lv = findViewById(R.id.shelter_list);
 
-        lv.setAdapter(new ShelterAdapter(this,
-                (List<Shelter>) ((ShelterTrackerApplication)getApplication()).getShelterList().getShelters()));
+        lv.setAdapter(new AnimalAdapter(this,
+                (List<Animal>) ((ShelterTrackerApplication)getApplication()).getShelterList().getAllAnimals()));
 
     }
 }
