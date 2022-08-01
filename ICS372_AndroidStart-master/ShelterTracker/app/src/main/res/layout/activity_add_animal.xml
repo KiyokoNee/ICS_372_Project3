@@ -62,6 +62,8 @@
     <RadioGroup
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
+        android:id="@+id/radio_group"
+        android:layout_marginBottom="20dp"
         android:layout_below="@id/editText1">
 
         <RadioButton
@@ -80,6 +82,31 @@
             android:textSize="20sp"
             android:onClick="onRadioButtonClicked"/>
     </RadioGroup>
+
+    <Spinner
+        android:id="@+id/type_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/radio_group"
+        android:layout_marginBottom="20dp"
+        android:contentDescription="Animal Type"
+        android:minHeight="48dp"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/receipt_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/type_spinner"
+        android:layout_marginBottom="20dp"
+        android:background="#CCCCCC"
+        android:ems="10"
+        android:hint="Receipt Date"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:textColorHint="#455A64">
+
+    </EditText>
 
 
 
