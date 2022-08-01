@@ -108,6 +108,13 @@
 
     </EditText>
 
-
+    <Button
+        android:id="@+id/submit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/receipt_date"
+        android:text="Submit"
+        android:layout_marginBottom="20dp"
+        android:onClick="onSubmitClicked"/>
 
 </RelativeLayout>
