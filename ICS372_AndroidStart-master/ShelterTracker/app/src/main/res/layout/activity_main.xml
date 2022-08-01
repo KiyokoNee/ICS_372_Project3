@@ -26,13 +26,6 @@
         android:text="Show All Animals" />
 
     <Button
-        android:id="@+id/animal_by_shelter_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="30sp"
-        android:text="See Animals In shelter" />
-
-    <Button
         android:id="@+id/show_dialog_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
