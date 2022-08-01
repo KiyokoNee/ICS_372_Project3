@@ -3,6 +3,8 @@ package edu.metrostate.sheltertracker;
 import android.app.Application;
 import android.util.Log;
 
+import org.json.JSONArray;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -16,12 +18,19 @@ public class ShelterTrackerApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        String temp = "";
         //TODO: call parser to decode JSON string to list
+        try {
+            temp = readFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+//        JSONArray tempArray = FileUtilities.readJSON(temp);
         //TODO: add elements to list
+        shelterList.addHashMap(ParseUtilities.loadJSON(temp));
 
-
-//        for(int i = 0; i < temp_list.size(); i++) {
-//            shelterList.add(new Shelter(temp_list.get(i)));
+//        for(int i = 0; i < tempArray.length(); i++) {
+//            shelterList.add(new Shelter(tempArray.get(i)));
 //        }
         writeFile();
     }
@@ -37,7 +46,7 @@ public class ShelterTrackerApplication extends Application {
         // this will put files in the /sdcard/Android/data/edu.metrostate.sheltertracker/files directory
         File externalDir = getExternalFilesDir(null);
 
-        File internalDir = getFilesDir();
+//        File internalDir = getFilesDir();
 
         File outputFile = new File(externalDir, "myfile.txt");
 
@@ -56,6 +65,12 @@ public class ShelterTrackerApplication extends Application {
 //        File file = new File(path);
         List <String> temp_list = Files.readAllLines(path.toPath());
         return String.join("", temp_list);
+
+
+//        File path = getExternalFilesDir(null);
+//        List <String> temp_list = Files.readAllLines(path.toPath());
+//        String joined_string = String.join("", temp_list);
+//        ParseUtilities.addIncomingJSON(joined_string, shelterList);
 
     }
 }
