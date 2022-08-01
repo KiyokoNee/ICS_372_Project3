@@ -27,10 +27,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void showAnimalsInShelter(View view){ //combine this with showShelterList?
-
-    }
-
     public void addAnimal(View view){
         Intent intent = new Intent(this, AddAnimalActivity.class);
         startActivity(intent);

@@ -22,6 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="30sp"
+        android:onClick="showAllAnimals"
         android:text="Show All Animals" />
 
     <Button
@@ -43,6 +44,7 @@
         android:id="@+id/add_new_animal_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="addAnimal"
         android:text="Add Animal"
         android:textSize="30sp" />
 
@@ -50,6 +52,7 @@
         android:id="@+id/import_JSON_button"
         android:layout_width="match_parent"
         android:layout_height="65dp"
+        android:onClick="importJSON"
         android:text="Import JSON"
         android:textSize="30sp" />
 
@@ -57,6 +60,7 @@
         android:id="@+id/import_XML_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="importXML"
         android:text="Import XML"
         android:textSize="30sp" />
 
@@ -64,6 +68,7 @@
         android:id="@+id/export_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="exportShelterList"
         android:text="Export Shelter Roster"
         android:textSize="30sp" />
 
