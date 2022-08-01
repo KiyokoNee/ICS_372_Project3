@@ -2,8 +2,9 @@ package edu.metrostate.sheltertracker;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ListView;
+import android.widget.ArrayAdapter;
 import android.widget.RadioButton;
+import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -33,5 +34,14 @@ public class AddAnimalActivity extends AppCompatActivity {
 
     public void onSubmitClicked(View view){
 
+    }
+
+    public void fillSpinner(){
+        Spinner spinner = (Spinner)findViewById(R.id.type_spinner);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.animal_array, android.R.layout.simple_spinner_item);
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+
+        spinner.setAdapter(adapter);
     }
 }
