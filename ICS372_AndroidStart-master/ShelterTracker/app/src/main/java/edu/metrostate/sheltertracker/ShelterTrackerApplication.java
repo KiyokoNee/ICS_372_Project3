@@ -14,6 +14,8 @@ import java.util.List;
 public class ShelterTrackerApplication extends Application {
 
     private final ShelterList shelterList = new ShelterList();
+    private final ShelterList testShelterList = new ShelterList();
+
 
     @Override
     public void onCreate() {
@@ -25,12 +27,13 @@ public class ShelterTrackerApplication extends Application {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
 //        JSONArray tempArray = FileUtilities.readJSON(temp);
         //TODO: add elements to list
         shelterList.addHashMap(ParseUtilities.loadJSON(temp));
 
-//        for(int i = 0; i < tempArray.length(); i++) {
-//            shelterList.add(new Shelter(tempArray.get(i)));
+//        for(int i = 0; i < 20; i++) {
+//            testShelterList.addShelter(Integer.toString(i),new Shelter(Integer.toString(i), "Shelter Number " + i));
 //        }
         writeFile();
     }
@@ -46,7 +49,7 @@ public class ShelterTrackerApplication extends Application {
         // this will put files in the /sdcard/Android/data/edu.metrostate.sheltertracker/files directory
         File externalDir = getExternalFilesDir(null);
 
-//        File internalDir = getFilesDir();
+        File internalDir = getFilesDir();
 
         File outputFile = new File(externalDir, "myfile.txt");
 
