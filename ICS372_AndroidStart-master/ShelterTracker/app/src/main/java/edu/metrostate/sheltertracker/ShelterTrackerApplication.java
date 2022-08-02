@@ -14,24 +14,13 @@ import java.util.List;
 public class ShelterTrackerApplication extends Application {
 
     private final ShelterList shelterList = new ShelterList();
-    private final ShelterList testShelterList = new ShelterList();
 
 
     @Override
     public void onCreate() {
         super.onCreate();
-        String temp = "";
-        //TODO: call parser to decode JSON string to list
-        try {
-            temp = readExternalFile("myfile.txt");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        String testString = getExternalFilesDir(null).getAbsolutePath()+"/myfile.txt";
-
-//        JSONArray tempArray = FileUtilities.readJSON(temp);
-        //TODO: add elements to list
-        shelterList.addHashMap(ParseUtilities.loadJSON(testString));
+        String localFileLocation = getExternalFilesDir(null).getAbsolutePath()+"/myfile.txt";
+        shelterList.addHashMap(ParseUtilities.loadJSON(localFileLocation));
 
         writeFile();
     }
