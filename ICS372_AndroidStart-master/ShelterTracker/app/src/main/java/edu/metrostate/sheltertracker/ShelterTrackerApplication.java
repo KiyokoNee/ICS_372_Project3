@@ -23,10 +23,11 @@ public class ShelterTrackerApplication extends Application {
         String temp = "";
         //TODO: call parser to decode JSON string to list
         try {
-            temp = readFile();
+            temp = readExternalFile("myfile.txt");
         } catch (IOException e) {
             e.printStackTrace();
         }
+
 
 //        JSONArray tempArray = FileUtilities.readJSON(temp);
         //TODO: add elements to list
@@ -63,11 +64,12 @@ public class ShelterTrackerApplication extends Application {
 
     }
 
-    public String readFile() throws IOException {
+    public String readExternalFile(String fileName) throws IOException {
         File path = getExternalFilesDir(null);
-//        File file = new File(path);
-        List <String> temp_list = Files.readAllLines(path.toPath());
+        File file = new File(path, fileName);
+        List <String> temp_list = Files.readAllLines(file.toPath());
         return String.join("", temp_list);
+
 
 
 //        File path = getExternalFilesDir(null);
