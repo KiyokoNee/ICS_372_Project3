@@ -33,13 +33,35 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void importJSON(View view){
-        Intent intent = new Intent(this, ImportJSONActivity.class);
-        startActivity(intent);
+//        Intent intent = new Intent(this, ImportJSONActivity.class);
+//        startActivity(intent);
+
+        // Alert once import JSON button is clicked, doesn't mean it is successful. More work to come!
+        Dialog dialog = new AlertDialog.Builder(this).setTitle("My alert").setCancelable(false)
+                .setMessage("Import of JSON file success! ")
+                .setPositiveButton( "OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.dismiss();
+                    }
+                }).create();
+
+        dialog.show();
     }
 
     public void importXML(View view){
-        Intent intent = new Intent(this, ImportXMLActivity.class);
-        startActivity(intent);
+//        Intent intent = new Intent(this, ImportXMLActivity.class);
+//        startActivity(intent);
+
+        // Alert once import XML button is clicked, doesn't mean it is successful. More work to come!
+        Dialog dialog = new AlertDialog.Builder(this).setTitle("My alert").setCancelable(false)
+                .setMessage("Import of XML file success!")
+                .setPositiveButton( "OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.dismiss();
+                    }
+                }).create();
+
+        dialog.show();
     }
 
     public void exportShelterList(View view){
