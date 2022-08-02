@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import java.util.Collection;
 import java.util.List;
 
 public class ShelterListActivity extends AppCompatActivity {
@@ -18,7 +19,7 @@ public class ShelterListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_shelter_list);
 
         ListView lv = findViewById(R.id.shelter_list);
-        List<Shelter> shelters = (List<Shelter>) (((ShelterTrackerApplication)getApplication()).getShelterList().getShelters());
+        List<Shelter> shelters = (((ShelterTrackerApplication)getApplication()).getShelterList().getShelters());
 
         lv.setAdapter(new ShelterAdapter(this,shelters));
         lv.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

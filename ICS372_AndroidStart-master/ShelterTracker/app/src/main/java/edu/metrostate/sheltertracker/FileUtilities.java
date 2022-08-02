@@ -25,13 +25,11 @@ public class FileUtilities {
      */
     public static JSONArray readJSON(String filename) {
         try {
-            FileReader inputFile = new FileReader(filename);
-            StringBuffer sb = new StringBuffer();
-            for(String s : Files.readAllLines(Paths.get(new File(filename).getPath()))) {
-                sb.append(s);
-            }
+            File file = new File(filename);
+            List <String> temp_list = Files.readAllLines(file.toPath());
+            String temp = String.join("", temp_list);
 
-            JSONObject obj = new JSONObject(sb.toString());//JSONObject) parser.parse(inputFile);
+            JSONObject obj = new JSONObject(temp.toString());//JSONObject) parser.parse(inputFile);
             return (JSONArray) obj.get("shelter_roster");
         } catch (Exception e) {
             e.printStackTrace();

@@ -42,8 +42,8 @@ public class ShelterList {
      * Returns a Collection of the Shelters stored in mapOfShelters.
      * @return (Collection) - values of stored Shelters.
      */
-    public Collection<Shelter> getShelters(){
-        return mapOfShelters.values();}
+    public List<Shelter> getShelters(){
+        return new ArrayList<>(mapOfShelters.values());}
 
     /**
      * Checks whether a given animal type is supported.

@@ -27,15 +27,12 @@ public class ShelterTrackerApplication extends Application {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+        String testString = getExternalFilesDir(null).getAbsolutePath()+"/myfile.txt";
 
 //        JSONArray tempArray = FileUtilities.readJSON(temp);
         //TODO: add elements to list
-        shelterList.addHashMap(ParseUtilities.loadJSON(temp));
+        shelterList.addHashMap(ParseUtilities.loadJSON(testString));
 
-//        for(int i = 0; i < 20; i++) {
-//            testShelterList.addShelter(Integer.toString(i),new Shelter(Integer.toString(i), "Shelter Number " + i));
-//        }
         writeFile();
     }
 
