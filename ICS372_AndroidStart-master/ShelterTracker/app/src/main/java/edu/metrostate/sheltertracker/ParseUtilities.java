@@ -87,13 +87,13 @@ public class ParseUtilities {
 
                 JSONArray animalList = (JSONArray) shelter.get("animals");
                 for (int j = 0; j < animalList.length(); j++) {
-                    JSONObject animal = shelters.getJSONObject(j);
+                    JSONObject animal = animalList.getJSONObject(j);
                     String aniType = (String) animal.get("animal_type");
                     String aniName = (String) animal.get("animal_name");
                     String aniID = (String) animal.get("animal_id");
                     Object temp = animal.get("weight");
                     String aniUnit = (String) animal.get("weight_unit");
-                    long aniReceipt = (Long) animal.get("receipt_date");
+                    long aniReceipt = animal.getLong("receipt_date");
                     double aniWeight;
 
                     if (temp instanceof Double) {
