@@ -3,23 +3,21 @@ package edu.metrostate.sheltertracker;
 import android.app.Application;
 import android.util.Log;
 
-import org.json.JSONArray;
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.util.ArrayList;
 import java.util.List;
 
 public class ShelterTrackerApplication extends Application {
 
     private final ShelterList shelterList = new ShelterList();
+    private final String saveFile = "/myfile.txt";
 
 
     @Override
     public void onCreate() {
         super.onCreate();
-        String localFileLocation = getExternalFilesDir(null).getAbsolutePath()+"/myfile.txt";
+        String localFileLocation = getExternalFilesDir(null).getAbsolutePath()+saveFile;
         shelterList.addHashMap(ParseUtilities.loadJSON(localFileLocation));
 
         writeFile();
