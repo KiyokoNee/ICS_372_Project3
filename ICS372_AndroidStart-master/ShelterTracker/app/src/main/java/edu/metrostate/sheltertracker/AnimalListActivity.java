@@ -18,24 +18,25 @@ public class AnimalListActivity extends AppCompatActivity {
         String id = getIntent().getStringExtra("shelter_id");
         TextView label = findViewById(R.id.title_text);
         Shelter selected = null;
+        ListView lv = findViewById(R.id.shelter_list);
+
         if(id == null){
             label.setText("All Animals");
+            lv.setAdapter(new AnimalAdapter(this,
+                    ((ShelterTrackerApplication)getApplication()).getShelterList().getAllAnimals()));
         } else{
-            List<Shelter> shelters = (List<Shelter>) (((ShelterTrackerApplication)getApplication()).getShelterList().getShelters());
+            List<Shelter> shelters = (((ShelterTrackerApplication)getApplication()).getShelterList().getShelters());
+
             for (Shelter shelter:shelters) {
                 if(shelter.getShelterID().equals(id)){
                     selected = shelter;
                     break;
                 }
-            };
-            if(selected != null){
-                label.setText(selected.getShelterName());
             }
-        }
-        ListView lv = findViewById(R.id.shelter_list);
 
-        lv.setAdapter(new AnimalAdapter(this,
-                 ((ShelterTrackerApplication)getApplication()).getShelterList().getAllAnimals()));
+            label.setText(selected.getShelterName());
+            lv.setAdapter(new AnimalAdapter(this,((ShelterTrackerApplication)getApplication()).getShelterList().getShelter(id).getAnimalList()));
+        }
 
     }
 }

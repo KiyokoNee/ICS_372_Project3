@@ -77,7 +77,7 @@ public class ShelterList {
 
     public List<Animal> getAllAnimals(){
         List<Animal> animals = new ArrayList<>();
-        List<Shelter> shelters = (List<Shelter>) mapOfShelters.values();
+        List<Shelter> shelters = new ArrayList<>(mapOfShelters.values());
 
         for (int i = 0; i < shelters.size(); i++) {
             animals.addAll(shelters.get(i).getAnimalList());

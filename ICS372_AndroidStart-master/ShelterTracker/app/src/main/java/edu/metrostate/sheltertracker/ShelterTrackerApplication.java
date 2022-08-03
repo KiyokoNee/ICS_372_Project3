@@ -22,7 +22,7 @@ public class ShelterTrackerApplication extends Application {
         String localFileLocation = getExternalFilesDir(null).getAbsolutePath()+"/seedFile.txt";
         shelterList.addHashMap(ParseUtilities.loadJSON(localFileLocation));
 
-        writeFile();
+        //writeFile();
     }
 
     public ShelterList getShelterList() {

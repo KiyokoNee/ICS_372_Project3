@@ -31,6 +31,7 @@ public class AnimalAdapter extends ArrayAdapter<Animal> {
 
         id.setText(getItem(position).getAnimal_ID());
         name.setText(getItem(position).getAnimal_Name());
+        type.setText(getItem(position).getAnimal_Type());
 
         return convertView;
     }

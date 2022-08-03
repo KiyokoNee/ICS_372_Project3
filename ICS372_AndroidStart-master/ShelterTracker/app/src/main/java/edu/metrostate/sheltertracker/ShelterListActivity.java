@@ -22,17 +22,12 @@ public class ShelterListActivity extends AppCompatActivity {
         List<Shelter> shelters = (((ShelterTrackerApplication)getApplication()).getShelterList().getShelters());
 
         lv.setAdapter(new ShelterAdapter(this,shelters));
-        lv.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(ShelterListActivity.this, AnimalListActivity.class);
-                intent.putExtra("shelter_id", shelters.get(i).getShelterID());
+                intent.putExtra("shelter_id", shelters.get(position).getShelterID());
                 startActivity(intent);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
             }
         });
     }
