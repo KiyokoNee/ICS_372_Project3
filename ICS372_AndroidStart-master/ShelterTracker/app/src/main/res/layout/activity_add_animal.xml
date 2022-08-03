@@ -22,7 +22,7 @@
         android:layout_marginBottom="20dp"
         android:background="#CCCCCC"
         android:ems="10"
-        android:hint="Name"
+        android:hint="Animal Name"
         android:inputType="text"
         android:minHeight="48dp"
         android:textColorHint="#455A64">
@@ -37,7 +37,7 @@
         android:layout_marginBottom="20dp"
         android:background="#CCCCCC"
         android:ems="10"
-        android:hint="ID"
+        android:hint="Animal ID"
         android:inputType="text"
         android:minHeight="48dp"
         android:textColorHint="#455A64">
@@ -52,7 +52,7 @@
         android:layout_marginBottom="20dp"
         android:background="#CCCCCC"
         android:ems="10"
-        android:hint="Weight"
+        android:hint="Animal Weight"
         android:inputType="text"
         android:minHeight="48dp"
         android:textColorHint="#455A64">
