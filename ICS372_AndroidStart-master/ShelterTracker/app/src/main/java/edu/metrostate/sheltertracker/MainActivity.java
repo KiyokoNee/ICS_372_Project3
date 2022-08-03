@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     public void importJSON(View view){
 //        Intent intent = new Intent(this, ImportJSONActivity.class);
 //        startActivity(intent);
-        String jsonFile = "/JSONInput.json";
+        String jsonFile = ((ShelterTrackerApplication)getApplication()).getExternalFilesDir(null).getAbsolutePath() + "/JSONInput.json";
         ParseUtilities.addIncomingJSON(jsonFile, ((ShelterTrackerApplication)getApplication()).getShelterList());
 
         // Alert once import JSON button is clicked, doesn't mean it is successful. More work to come!
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
     public void importXML(View view){
 //        Intent intent = new Intent(this, ImportXMLActivity.class);
 //        startActivity(intent);
-        String xmlFile = "/XMLInput.xml";
+        String xmlFile = ((ShelterTrackerApplication)getApplication()).getExternalFilesDir(null).getAbsolutePath() + "/XMLInput.xml";
         ParseUtilities.parseIncomingXML(xmlFile, ((ShelterTrackerApplication)getApplication()).getShelterList());
 
         // Alert once import XML button is clicked, doesn't mean it is successful. More work to come!
