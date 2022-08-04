@@ -22,7 +22,7 @@ public class ShelterTrackerApplication extends Application {
         String localFileLocation = getExternalFilesDir(null).getAbsolutePath()+"/seedFile.txt";
         shelterList.addHashMap(ParseUtilities.loadJSON(localFileLocation));
 
-        //writeFile();
+        writeFile();
     }
 
     public ShelterList getShelterList() {
@@ -48,11 +48,11 @@ public class ShelterTrackerApplication extends Application {
 
     }
 
-    public String readExternalFile(String fileName) throws IOException {
-        File path = getExternalFilesDir(null);
-        File file = new File(path, fileName);
-        List <String> temp_list = Files.readAllLines(file.toPath());
-        return String.join("", temp_list);
+//    public String readExternalFile(String fileName) throws IOException {
+//        File path = getExternalFilesDir(null);
+//        File file = new File(path, fileName);
+//        List <String> temp_list = Files.readAllLines(file.toPath());
+//        return String.join("", temp_list);
 
 
 
@@ -61,5 +61,5 @@ public class ShelterTrackerApplication extends Application {
 //        String joined_string = String.join("", temp_list);
 //        ParseUtilities.addIncomingJSON(joined_string, shelterList);
 
-    }
+//    }
 }
