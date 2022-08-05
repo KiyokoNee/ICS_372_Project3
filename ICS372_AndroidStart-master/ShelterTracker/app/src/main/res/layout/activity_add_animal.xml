@@ -17,8 +17,9 @@
     <EditText
         android:id="@+id/nameInput"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/title_text"
+        android:layout_height="37dp"
+        android:layout_below="@id/shelter_spinner"
+        android:layout_marginTop="19dp"
         android:layout_marginBottom="20dp"
         android:background="#CCCCCC"
         android:ems="10"
@@ -32,7 +33,7 @@
     <EditText
         android:id="@+id/idInput"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="38dp"
         android:layout_below="@id/nameInput"
         android:layout_marginBottom="20dp"
         android:background="#CCCCCC"
@@ -45,9 +46,9 @@
     </EditText>
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/animalWeightInput"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="37dp"
         android:layout_below="@id/idInput"
         android:layout_marginBottom="20dp"
         android:background="#CCCCCC"
@@ -64,7 +65,7 @@
         android:layout_width="wrap_content"
         android:id="@+id/radio_group"
         android:layout_marginBottom="20dp"
-        android:layout_below="@id/editText1">
+        android:layout_below="@id/animalWeightInput">
 
         <RadioButton
             android:id="@+id/radio_lb"
@@ -85,9 +86,10 @@
 
     <Spinner
         android:id="@+id/type_spinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="206dp"
+        android:layout_height="37dp"
         android:layout_below="@id/radio_group"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="20dp"
         android:contentDescription="Animal Type"
         android:minHeight="48dp"
@@ -96,7 +98,7 @@
     <EditText
         android:id="@+id/receipt_date"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="38dp"
         android:layout_below="@id/type_spinner"
         android:layout_marginBottom="20dp"
         android:background="#CCCCCC"
@@ -116,5 +118,13 @@
         android:text="Submit"
         android:layout_marginBottom="20dp"
         android:onClick="onSubmitClicked"/>
+
+    <Spinner
+        android:id="@+id/shelter_spinner"
+        android:layout_width="208dp"
+        android:layout_height="32dp"
+        android:layout_below="@id/title_text"
+        android:minHeight="48dp"
+        android:textSize="20sp" />
 
 </RelativeLayout>
