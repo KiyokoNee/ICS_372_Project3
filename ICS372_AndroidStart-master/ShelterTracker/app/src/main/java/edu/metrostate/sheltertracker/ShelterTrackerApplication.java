@@ -19,7 +19,7 @@ public class ShelterTrackerApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        String localFileLocation = getExternalFilesDir(null).getAbsolutePath()+"/seedFile.json";
+        String localFileLocation = getExternalFilesDir(null).getAbsolutePath()+File.separator+"seedFile.json";
         shelterList.addHashMap(ParseUtilities.loadJSON(localFileLocation));
 
 //        writeFile();

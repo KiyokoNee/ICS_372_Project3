@@ -36,7 +36,7 @@ public class ImportFileActivity extends AppCompatActivity {
                 shelterList.addHashMap(ParseUtilities.loadJSON(localFileLocation));
                 //TODO sort out how to save to seedFile.txt or .json
 //                ((ShelterTrackerApplication)getApplication()).writeFile();
-                FileUtilities.writeJSON(shelterList, getExternalFilesDir(null).getAbsolutePath()+"/seedFile.json");
+                FileUtilities.writeJSON(shelterList, getExternalFilesDir(null).getAbsolutePath()+File.separator+"seedFile.json");
                 showDialogSuccess(view);
                 mEdit.getText().clear();
                 }
