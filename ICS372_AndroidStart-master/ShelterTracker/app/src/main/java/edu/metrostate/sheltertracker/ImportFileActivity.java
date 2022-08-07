@@ -41,7 +41,6 @@ public class ImportFileActivity extends AppCompatActivity {
             }
         });
 
-
 //        ListView lv = findViewById(R.id.shelter_list);
 
 //        lv.setAdapter(new ShelterAdapter(this,
@@ -50,7 +49,7 @@ public class ImportFileActivity extends AppCompatActivity {
     }
     public void showDialog(View view) {
 
-        Dialog dialog = new AlertDialog.Builder(this).setTitle("My alert").setCancelable(false)
+        Dialog dialog = new AlertDialog.Builder(this).setTitle("Error:").setCancelable(false)
                 .setMessage("File does not exist")
                 .setPositiveButton( "OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
