@@ -1,0 +1,30 @@
+{
+
+  "shelter_roster": [{
+
+    "shelter_receiving": true,
+
+    "shelter_name": "Animals are Great",
+
+    "animals": [{
+
+      "animal_name": "King",
+
+      "weight_unit": "kg",
+
+      "receipt_date": 1111111111,
+
+      "animal_id": "15dde",
+
+      "weight": 2.6,
+
+      "animal_type": "rabbit"
+
+    }],
+
+    "shelter_id": "123456"
+
+  }]
+
+}
+
