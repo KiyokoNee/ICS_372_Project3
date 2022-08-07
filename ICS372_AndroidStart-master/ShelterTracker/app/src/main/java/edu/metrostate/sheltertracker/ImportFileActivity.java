@@ -36,7 +36,10 @@ public class ImportFileActivity extends AppCompatActivity {
                     showDialog(view);
                 }else{
                 shelterList.addHashMap(ParseUtilities.loadJSON(localFileLocation));
+                //TODO sort out how to save to seedFile.txt or .json
                 ((ShelterTrackerApplication)getApplication()).writeFile();
+//                FileUtilities.writeJSON(shelterList, getExternalFilesDir(null).getAbsolutePath()+"/seedFile.txt");
+                mEdit.getText().clear();
                 }
             }
         });
