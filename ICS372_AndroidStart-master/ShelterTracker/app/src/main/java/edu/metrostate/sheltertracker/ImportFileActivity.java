@@ -30,7 +30,7 @@ public class ImportFileActivity extends AppCompatActivity {
             public void onClick(View view) {
                 EditText mEdit = findViewById(R.id.fileNameInput);
                 String file_name = mEdit.getText().toString();
-                String localFileLocation = getExternalFilesDir(null).getAbsolutePath()+file_name;
+                String localFileLocation = getExternalFilesDir(null).getAbsolutePath()+File.separator+file_name;
                 File file = new File(localFileLocation);
                 if(!file.exists()){
                     showDialog(view);
