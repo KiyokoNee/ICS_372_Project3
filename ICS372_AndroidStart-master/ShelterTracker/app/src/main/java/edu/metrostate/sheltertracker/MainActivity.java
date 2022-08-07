@@ -51,21 +51,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void importXML(View view){
-//        Intent intent = new Intent(this, ImportXMLActivity.class);
-//        startActivity(intent);
-        String xmlFile = ((ShelterTrackerApplication)getApplication()).getExternalFilesDir(null).getAbsolutePath() + "/XMLInput.xml";
-        ParseUtilities.parseIncomingXML(xmlFile, ((ShelterTrackerApplication)getApplication()).getShelterList());
-
-        // Alert once import XML button is clicked, doesn't mean it is successful. More work to come!
-        Dialog dialog = new AlertDialog.Builder(this).setTitle("My alert").setCancelable(false)
-                .setMessage("Import of XML file success!")
-                .setPositiveButton( "OK", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.dismiss();
-                    }
-                }).create();
-
-        dialog.show();
+        Intent intent = new Intent(this, ImportXMLActivity.class);
+        startActivity(intent);
+//        String xmlFile = ((ShelterTrackerApplication)getApplication()).getExternalFilesDir(null).getAbsolutePath() + "/XMLInput.xml";
+//        ParseUtilities.parseIncomingXML(xmlFile, ((ShelterTrackerApplication)getApplication()).getShelterList());
+//
+//        // Alert once import XML button is clicked, doesn't mean it is successful. More work to come!
+//        Dialog dialog = new AlertDialog.Builder(this).setTitle("My alert").setCancelable(false)
+//                .setMessage("Import of XML file success!")
+//                .setPositiveButton( "OK", new DialogInterface.OnClickListener() {
+//                    public void onClick(DialogInterface dialog, int id) {
+//                        dialog.dismiss();
+//                    }
+//                }).create();
+//
+//        dialog.show();
     }
 
     public void exportShelterList(View view){

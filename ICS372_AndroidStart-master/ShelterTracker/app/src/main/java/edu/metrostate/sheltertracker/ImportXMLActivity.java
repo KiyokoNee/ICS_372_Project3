@@ -7,12 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.File;
-import java.util.List;
 
 public class ImportXMLActivity extends AppCompatActivity {
     private String fileName;
@@ -20,7 +18,7 @@ public class ImportXMLActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.import_shelter);
+        setContentView(R.layout.import_xml);
         ShelterList shelterList = (((ShelterTrackerApplication)getApplication()).getShelterList());
 
 
@@ -35,7 +33,7 @@ public class ImportXMLActivity extends AppCompatActivity {
                 if(!file.exists()){
                     showDialogError(view);
                 }else{
-                    shelterList.addHashMap(ParseUtilities.loadJSON(localFileLocation));
+                    ParseUtilities.parseIncomingXML(localFileLocation, shelterList);
                     //TODO sort out how to save to seedFile.txt or .json
 //                ((ShelterTrackerApplication)getApplication()).writeFile();
                     FileUtilities.writeJSON(shelterList, localFileLocation);
