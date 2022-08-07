@@ -26,6 +26,14 @@
         android:text="Show All Animals" />
 
     <Button
+        android:id="@+id/change_receiving"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:onClick="showAllAnimals"
+        android:text="Enable/Disable Receiving" />
+
+    <Button
         android:id="@+id/show_dialog_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
