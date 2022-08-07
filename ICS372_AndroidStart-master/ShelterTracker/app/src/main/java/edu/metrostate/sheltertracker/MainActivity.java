@@ -73,6 +73,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void toggleReceiving(View view){
+        Intent intent = new Intent(this, ReceivingActivity.class);
+        startActivity(intent);
+    }
+
     public void showDialog(View view) {
 
         Dialog dialog = new AlertDialog.Builder(this).setTitle("My alert").setCancelable(false)

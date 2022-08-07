@@ -36,6 +36,9 @@
             android:name=".ExportActivity"
             android:exported="false"/>
         <activity
+            android:name=".ReceivingActivity"
+            android:exported="false"/>
+        <activity
             android:name=".AddAnimalActivity"
             android:exported="false"/>
     </application>
