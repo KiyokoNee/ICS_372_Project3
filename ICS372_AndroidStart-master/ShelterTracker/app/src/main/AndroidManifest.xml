@@ -30,6 +30,9 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".ImportJSONActivity"
+            android:exported="false"/>
+        <activity
             android:name=".AddAnimalActivity"
             android:exported="false"/>
     </application>
