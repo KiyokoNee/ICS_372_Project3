@@ -33,21 +33,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void importJSON(View view){
-//        Intent intent = new Intent(this, ImportJSONActivity.class);
-//        startActivity(intent);
-        String jsonFile = ((ShelterTrackerApplication)getApplication()).getExternalFilesDir(null).getAbsolutePath() + "/JSONInput.json";
-        ParseUtilities.addIncomingJSON(jsonFile, ((ShelterTrackerApplication)getApplication()).getShelterList());
-
-        // Alert once import JSON button is clicked, doesn't mean it is successful. More work to come!
-        Dialog dialog = new AlertDialog.Builder(this).setTitle("My alert").setCancelable(false)
-                .setMessage("Import of JSON file success! ")
-                .setPositiveButton( "OK", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.dismiss();
-                    }
-                }).create();
-
-        dialog.show();
+        Intent intent = new Intent(this, ImportFileActivity.class);
+        startActivity(intent);
+//        String jsonFile = ((ShelterTrackerApplication)getApplication()).getExternalFilesDir(null).getAbsolutePath() + "/JSONInput.json";
+//        ParseUtilities.addIncomingJSON(jsonFile, ((ShelterTrackerApplication)getApplication()).getShelterList());
+//
+//        // Alert once import JSON button is clicked, doesn't mean it is successful. More work to come!
+//        Dialog dialog = new AlertDialog.Builder(this).setTitle("My alert").setCancelable(false)
+//                .setMessage("Import of JSON file success! ")
+//                .setPositiveButton( "OK", new DialogInterface.OnClickListener() {
+//                    public void onClick(DialogInterface dialog, int id) {
+//                        dialog.dismiss();
+//                    }
+//                }).create();
+//
+//        dialog.show();
     }
 
     public void importXML(View view){

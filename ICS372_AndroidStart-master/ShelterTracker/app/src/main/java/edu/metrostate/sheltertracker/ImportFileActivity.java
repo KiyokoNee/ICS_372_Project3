@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.List;
 
-public class ImportJSONActivity extends AppCompatActivity {
+public class ImportFileActivity extends AppCompatActivity {
     private String fileName;
 
     @Override
@@ -21,4 +21,6 @@ public class ImportJSONActivity extends AppCompatActivity {
 //                (List<Shelter>) ((ShelterTrackerApplication)getApplication()).getShelterList().getShelters()));
 //
     }
+
+
 }

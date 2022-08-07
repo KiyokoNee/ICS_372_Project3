@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddAnimalActivity">
+
+    <TextView
+        android:id="@+id/title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="Export Shelter Data"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/file_name_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title_text"
+        android:layout_marginBottom="20dp"
+        android:text="Enter Save File Name"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/fileNameInput"
+        android:layout_width="wrap_content"
+        android:layout_height="37dp"
+        android:layout_below="@id/file_name_text"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="10dp"
+        android:background="#CCCCCC"
+        android:ems="10"
+        android:hint="ex) MyShelterDoc.txt"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textColorHint="#455A64"/>
+
+    <Button
+        android:id="@+id/submit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fileNameInput"
+        android:text="Submit"
+        android:layout_marginBottom="20dp"
+        android:onClick="onSubmitClicked"/>
+
+</RelativeLayout>
