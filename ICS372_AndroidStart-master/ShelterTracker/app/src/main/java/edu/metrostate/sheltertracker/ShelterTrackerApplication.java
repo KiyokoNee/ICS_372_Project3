@@ -19,10 +19,10 @@ public class ShelterTrackerApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        String localFileLocation = getExternalFilesDir(null).getAbsolutePath()+"/seedFile.txt";
+        String localFileLocation = getExternalFilesDir(null).getAbsolutePath()+"/seedFile.json";
         shelterList.addHashMap(ParseUtilities.loadJSON(localFileLocation));
 
-        writeFile();
+//        writeFile();
     }
 
     public ShelterList getShelterList() {
@@ -36,7 +36,7 @@ public class ShelterTrackerApplication extends Application {
         // this will put files in the /sdcard/Android/data/edu.metrostate.sheltertracker/files directory
         File externalDir = getExternalFilesDir(null);
 
-        File outputFile = new File(externalDir, "seedFile.txt");
+        File outputFile = new File(externalDir, "seedFile.json");
 
         try {
             Files.createFile(outputFile.toPath());

@@ -33,7 +33,13 @@
             android:name=".ImportFileActivity"
             android:exported="false"/>
         <activity
+            android:name=".ImportXMLActivity"
+            android:exported="false"/>
+        <activity
             android:name=".ExportActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".ReceivingActivity"
             android:exported="false"/>
         <activity
             android:name=".AddAnimalActivity"

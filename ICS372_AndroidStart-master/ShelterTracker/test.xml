@@ -1,0 +1,24 @@
+<Shelters>
+    <Shelter id="485">
+        <Name>Animals are Great</Name>
+        <Animal type="rabbit" id="15dde">
+            <Weight unit="kg">2.6</Weight>
+            <Name>Mopsy</Name>
+        </Animal>
+        <Animal type="dog" id="52523">
+            <Weight unit="kg">73</Weight>
+            <Name>Bruiser</Name>
+            <ReceiptDate>1732239329</ReceiptDate>
+        </Animal>
+        <Animal type="cat" id="151e5dde">
+            <Weight unit="lb">11</Weight>
+            <Name>Claws Monet</Name>
+            <ReceiptDate>1732299329</ReceiptDate>
+        </Animal>
+        <Animal type="bird" id="ern222">
+            <Weight unit="lb">1.2</Weight>
+            <ReceiptDate>1732279329</ReceiptDate>
+            <Name>Polly</Name>
+        </Animal>
+    </Shelter>
+</Shelters>
