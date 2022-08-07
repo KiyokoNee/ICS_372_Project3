@@ -33,8 +33,8 @@ public class AddAnimalActivity extends AppCompatActivity {
         shelterArrayList.addAll(shelters);
         radioLB = findViewById(R.id.radio_lb);
         radioKG = findViewById(R.id.radio_kg);
-        fillSpinner();
-        fillSpinner2();
+        fillTypeSpinner();
+        fillShelterSpinner();
 
     }
 
@@ -64,7 +64,7 @@ public class AddAnimalActivity extends AppCompatActivity {
 
     }
 
-    public void fillSpinner(){
+    public void fillTypeSpinner(){
         Spinner spinner = findViewById(R.id.type_spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.animal_array, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -82,7 +82,7 @@ public class AddAnimalActivity extends AppCompatActivity {
         });
     }
 
-    public void fillSpinner2(){
+    public void fillShelterSpinner(){
         Spinner spinner2 = findViewById(R.id.shelter_spinner);
         spinner2.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, shelterArrayList));
         spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
