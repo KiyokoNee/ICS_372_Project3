@@ -20,7 +20,7 @@ public class AddAnimalActivity extends AppCompatActivity {
     private RadioButton radioKG = null;
     private String animal_Type;
     private String weight_unit;
-    private String shelter;
+    private Shelter shelter;
     private final ArrayList<Shelter> shelterArrayList = new ArrayList<>();
 
 
@@ -48,7 +48,7 @@ public class AddAnimalActivity extends AppCompatActivity {
 
     public void onSubmitClicked(View view){
 
-        ShelterList shelterList = (((ShelterTrackerApplication)getApplication()).getShelterList());
+        //ShelterList shelterList = (((ShelterTrackerApplication)getApplication()).getShelterList());
 
         EditText mEdit = findViewById(R.id.nameInput);
         String animal_Name = mEdit.getText().toString();
@@ -60,7 +60,7 @@ public class AddAnimalActivity extends AppCompatActivity {
         long receipt_date = Long.valueOf(mEdit.getText().toString());
 
         Animal newAnimal = new Animal(animal_Type, animal_Name, animal_ID, animal_weight, weight_unit, receipt_date);
-        Shelter.addUserCreatedAnimal(newAnimal, shelter, shelterList);
+        Shelter.addUserCreatedAnimal(newAnimal, shelter.getShelterID(), (((ShelterTrackerApplication)getApplication()).getShelterList()));
 
     }
 
@@ -88,7 +88,7 @@ public class AddAnimalActivity extends AppCompatActivity {
         spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                shelter = adapterView.getItemAtPosition(i).toString();
+                shelter = (Shelter) adapterView.getItemAtPosition(i);
             }
 
             @Override
