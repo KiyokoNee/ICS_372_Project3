@@ -5,10 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="875a536f-67fe-4c06-861b-e2c4aa0076ce" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/ICS_372_Project3.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ICS372_AndroidStart-master/ShelterTracker/.gradle/7.3.3/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ICS372_AndroidStart-master/ShelterTracker/.gradle/7.3.3/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ICS372_AndroidStart-master/ShelterTracker/.gradle/7.3.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/ICS372_AndroidStart-master/ShelterTracker/.gradle/7.3.3/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ICS372_AndroidStart-master/ShelterTracker/.gradle/7.3.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ICS372_AndroidStart-master/ShelterTracker/.gradle/7.3.3/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ICS372_AndroidStart-master/ShelterTracker/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ICS372_AndroidStart-master/ShelterTracker/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ICS372_AndroidStart-master/ShelterTracker/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/ICS372_AndroidStart-master/ShelterTracker/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ICS372_AndroidStart-master/ShelterTracker/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ICS372_AndroidStart-master/ShelterTracker/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ICS372_AndroidStart-master/ShelterTracker/.idea/modules/app/ShelterTracker.app.androidTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ICS372_AndroidStart-master/ShelterTracker/.idea/modules/app/ShelterTracker.app.androidTest.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ICS372_AndroidStart-master/ShelterTracker/.idea/modules/app/ShelterTracker.app.unitTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ICS372_AndroidStart-master/ShelterTracker/.idea/modules/app/ShelterTracker.app.unitTest.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ICS372_AndroidStart-master/ShelterTracker/.idea/shelf/Uncommitted_changes_before_Update_at_7_27_2022_12_37_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ICS372_AndroidStart-master/ShelterTracker/.idea/shelf/Uncommitted_changes_before_Update_at_7_27_2022_12_37_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ICS372_AndroidStart-master/ShelterTracker/.idea/shelf/Uncommitted_changes_before_Update_at_7_27_2022_12_38_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ICS372_AndroidStart-master/ShelterTracker/.idea/shelf/Uncommitted_changes_before_Update_at_7_27_2022_12_38_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ICS372_AndroidStart-master/ShelterTracker/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ICS372_AndroidStart-master/ShelterTracker/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ICS372_AndroidStart-master/ShelterTracker/app/build/generated/source/buildConfig/debug/edu/metrostate/sheltertracker/BuildConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ICS372_AndroidStart-master/ShelterTracker/app/build/generated/source/buildConfig/debug/edu/metrostate/sheltertracker/BuildConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ICS372_AndroidStart-master/ShelterTracker/app/src/test/java/edu/metrostate/sheltertracker/ExampleUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ICS372_AndroidStart-master/ShelterTracker/app/src/test/java/edu/metrostate/sheltertracker/ExampleUnitTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,16 +32,14 @@
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="cidr.known.project.marker" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/ICS372_AndroidStart-master/ShelterTracker/build.gradle" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true"
+  }
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -53,6 +61,5 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
