@@ -31,6 +31,12 @@ public class ShelterTrackerApplication extends Application {
         return shelterList;
     }
 
+    /**
+     * Method will write a new file to device sdcard. Method used for both initial storage of
+     * shelter data and for user defined export location.
+     * @param submittedFileName - user defined file name for export, else null will direct to
+     *                            default seedFile.json file location
+     */
     public void writeFile(String submittedFileName) {
         // this will put files in the /sdcard/Android/data/edu.metrostate.sheltertracker/files directory
         String fileName = "seedFile.json";
@@ -52,6 +58,12 @@ public class ShelterTrackerApplication extends Application {
         }
     }
 
+    /**
+     * Method for saving json data to defined file location. Used for both default storage and
+     * user defined export file.
+     * @param file - user defined file name for export, else null will direct to
+     *               default seedFile.json file location
+     */
     public void saveFile(String file) {
         String path = getExternalFilesDir(null).getAbsolutePath() + File.separator;
         String fileName = "seedFile.json";

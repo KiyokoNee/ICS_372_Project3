@@ -14,11 +14,19 @@ import java.io.File;
 
 public class ExportActivity extends AppCompatActivity {
 
+    /**
+     * Method will export shelter json data to a user defined file on device sdcard
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.export_shelter);
 
+        /**
+         * On submit, user defined file name is created and populated with data from applications
+         * current shelter roster.
+         */
         final Button button = (Button) findViewById(R.id.submit_button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
