@@ -96,8 +96,8 @@ public class ParseUtilities {
                     long aniReceipt = animal.getLong("receipt_date");
                     double aniWeight;
 
-                    if (temp instanceof Double) {
-                        aniWeight = (Double) temp;
+                    if (temp instanceof Number) {
+                        aniWeight = ((Number) temp).doubleValue();
                     } else {
                         aniWeight = ((Long) temp).doubleValue();
                     }

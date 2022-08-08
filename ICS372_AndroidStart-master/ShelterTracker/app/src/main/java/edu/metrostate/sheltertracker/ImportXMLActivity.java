@@ -37,6 +37,7 @@ public class ImportXMLActivity extends AppCompatActivity {
                     //TODO sort out how to save to seedFile.txt or .json
 //                ((ShelterTrackerApplication)getApplication()).writeFile();
                     FileUtilities.writeJSON(shelterList, localFileLocation);
+                    ((ShelterTrackerApplication)getApplication()).saveFile(null);
                     showDialogSuccess(view);
                     mEdit.getText().clear();
                 }

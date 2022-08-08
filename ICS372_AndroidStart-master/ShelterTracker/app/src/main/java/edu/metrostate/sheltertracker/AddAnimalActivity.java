@@ -102,6 +102,8 @@ public class AddAnimalActivity extends AppCompatActivity {
                         }
                     }).create();
         }
+        ((ShelterTrackerApplication)getApplication()).saveFile(null);
+
         dialog.show();
         radioGroup.clearCheck();
     }
