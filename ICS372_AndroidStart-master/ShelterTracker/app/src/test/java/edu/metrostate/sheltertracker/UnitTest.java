@@ -85,8 +85,8 @@ public class UnitTest {
         assertEquals(mapOfSheltersTest.getShelterQuantity(), 2);
 
         //attempt to add duplicate shelter
-        mapOfSheltersTest.addShelter(duplicateShelter.getShelterId(), duplicateShelter);
-        assertEquals(mapOfSheltersTest.getShelterQuantity(), 2);
+        mapOfSheltersTest.addShelter(duplicateShelter.getShelterID(), duplicateShelter);
+        assertEquals(mapOfSheltersTest.getShelter("12345").getShelterName(), "Original Shelter");
 
     }
 }

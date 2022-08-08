@@ -28,7 +28,7 @@ public class ShelterAdapter extends ArrayAdapter<Shelter> {
         TextView id = convertView.findViewById(R.id.shelter_id);
         TextView name = convertView.findViewById(R.id.shelter_name);
 
-        id.setText(getItem(position).getShelterId());
+        id.setText(getItem(position).getShelterID());
         name.setText(getItem(position).getShelterName());
 
         return convertView;
