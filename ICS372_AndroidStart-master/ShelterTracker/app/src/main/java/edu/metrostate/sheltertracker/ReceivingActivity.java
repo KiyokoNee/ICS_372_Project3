@@ -33,6 +33,7 @@ public class ReceivingActivity extends AppCompatActivity {
                     shelters.get(position).setReceiving(true);
                 }
 
+                ((ShelterTrackerApplication)getApplication()).saveFile(null);
                 showDialog(view);
             }
         });

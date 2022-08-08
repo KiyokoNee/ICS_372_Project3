@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void exit(View view){
+        ((ShelterTrackerApplication)getApplication()).saveFile(null);
         finish();
     }
 }

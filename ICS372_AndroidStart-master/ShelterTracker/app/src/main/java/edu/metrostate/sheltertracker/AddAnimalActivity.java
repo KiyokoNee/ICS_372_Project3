@@ -54,8 +54,6 @@ public class AddAnimalActivity extends AppCompatActivity {
 
     public void onSubmitClicked(View view){
 
-        //ShelterList shelterList = (((ShelterTrackerApplication)getApplication()).getShelterList());
-
         EditText mEdit = findViewById(R.id.nameInput);
         String animal_Name = mEdit.getText().toString();
         mEdit.getText().clear();
@@ -95,7 +93,7 @@ public class AddAnimalActivity extends AppCompatActivity {
             dialog.show();
         }else{
             dialog = new AlertDialog.Builder(this).setTitle("Adding Animal Status").setCancelable(false)
-                    .setMessage("Receiving Status: " +  shelter.isReceiving())
+                    .setMessage("Receiving status is " +  shelter.isReceiving() + " can not add animal!")
                     .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
                             dialog.dismiss();
