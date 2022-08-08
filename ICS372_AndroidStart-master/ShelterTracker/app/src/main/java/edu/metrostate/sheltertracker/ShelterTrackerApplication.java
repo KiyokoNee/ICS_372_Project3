@@ -40,7 +40,15 @@ public class ShelterTrackerApplication extends Application {
             } catch (IOException ex) {
                 Log.e("FileCreation", "Error creating file", ex);
             }
+        }
     }
 
+    public void saveFile(String file) {
+        String path = getExternalFilesDir(null).getAbsolutePath() + File.separator;
+        String fileName = "seedFile.json";
+        if(file != null) {
+            fileName = file;
+        }
+        FileUtilities.writeJSON(shelterList, path + fileName);
     }
 }
