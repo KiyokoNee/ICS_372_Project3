@@ -11,12 +11,20 @@ public class ShelterTrackerApplication extends Application {
 
     private final ShelterList shelterList = new ShelterList();
 
+    /**
+     * When application is launched, attempt to load preexisting data from predefined file location into shelterList.
+     * Call to writeFile
+     */
     @Override
     public void onCreate() {
         super.onCreate();
         String localFileLocation = getExternalFilesDir(null).getAbsolutePath()+File.separator+"seedFile.json";
-        shelterList.addHashMap(ParseUtilities.loadJSON(localFileLocation));
-        writeFile(null);
+        File file = new File(localFileLocation);
+        if(file.exists()) {
+            shelterList.addHashMap(ParseUtilities.loadJSON(localFileLocation));
+        } else {
+            writeFile(null);
+        }
     }
 
     public ShelterList getShelterList() {
@@ -37,6 +45,7 @@ public class ShelterTrackerApplication extends Application {
             try {
                 Files.createFile(outputFile.toPath());
                 Files.write(outputFile.toPath(), "My data".getBytes());
+
             } catch (IOException ex) {
                 Log.e("FileCreation", "Error creating file", ex);
             }
@@ -51,5 +60,4 @@ public class ShelterTrackerApplication extends Application {
         }
         FileUtilities.writeJSON(shelterList, path + fileName);
     }
-
 }

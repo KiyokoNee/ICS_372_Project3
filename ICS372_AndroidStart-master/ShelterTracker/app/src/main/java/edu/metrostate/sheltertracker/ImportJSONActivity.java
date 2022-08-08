@@ -14,6 +14,10 @@ import java.io.File;
 
 public class ImportJSONActivity extends AppCompatActivity {
 
+    /**
+     * Method takes user submitted XML file name, parses into hashmap of existing shelters.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +25,10 @@ public class ImportJSONActivity extends AppCompatActivity {
         ShelterList shelterList = (((ShelterTrackerApplication)getApplication()).getShelterList());
         final Button button = (Button) findViewById(R.id.submit_button);
 
+        /**
+         * When submit button is clicked user submitted string for file location is passed to
+         * ParseUtilities to be parsed into existing hashmap of shelters.
+         */
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -32,18 +40,15 @@ public class ImportJSONActivity extends AppCompatActivity {
                     showDialogError(view);
                 }else{
                 shelterList.addHashMap(ParseUtilities.loadJSON(localFileLocation));
-                //TODO sort out how to save to seedFile.txt or .json
                 ((ShelterTrackerApplication)getApplication()).saveFile(null);
                 showDialogSuccess(view);
                 mEdit.getText().clear();
                 }
             }
         });
-
     }
 
     public void showDialogError(View view) {
-
         Dialog dialog = new AlertDialog.Builder(this).setTitle("Error").setCancelable(false)
                 .setMessage("File does not exist")
                 .setPositiveButton( "OK", new DialogInterface.OnClickListener() {
@@ -55,7 +60,6 @@ public class ImportJSONActivity extends AppCompatActivity {
     }
 
     public void showDialogSuccess(View view) {
-
         Dialog dialog = new AlertDialog.Builder(this).setTitle("Success!").setCancelable(false)
                 .setMessage("File import complete")
                 .setPositiveButton( "OK", new DialogInterface.OnClickListener() {
@@ -65,6 +69,4 @@ public class ImportJSONActivity extends AppCompatActivity {
                 }).create();
         dialog.show();
     }
-
-
 }

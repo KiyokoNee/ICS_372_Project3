@@ -14,13 +14,20 @@ import java.io.File;
 
 public class ImportXMLActivity extends AppCompatActivity {
 
+    /**
+     * Method takes user submitted XML file name, parses into hashmap of existing shelters.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.import_xml);
         ShelterList shelterList = (((ShelterTrackerApplication)getApplication()).getShelterList());
 
-
+        /**
+         * When submit button is clicked user submitted string for file location is passed to
+         * FileUtilities to be parsed into existing hashmap of shelters.
+         */
         final Button button = (Button) findViewById(R.id.submit_button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,8 +40,6 @@ public class ImportXMLActivity extends AppCompatActivity {
                     showDialogError(view);
                 }else{
                     ParseUtilities.parseIncomingXML(localFileLocation, shelterList);
-                    //TODO sort out how to save to seedFile.txt or .json
-//                ((ShelterTrackerApplication)getApplication()).writeFile();
                     FileUtilities.writeJSON(shelterList, localFileLocation);
                     ((ShelterTrackerApplication)getApplication()).saveFile(null);
                     showDialogSuccess(view);
@@ -45,7 +50,6 @@ public class ImportXMLActivity extends AppCompatActivity {
     }
 
     public void showDialogError(View view) {
-
         Dialog dialog = new AlertDialog.Builder(this).setTitle("Error").setCancelable(false)
                 .setMessage("File does not exist")
                 .setPositiveButton( "OK", new DialogInterface.OnClickListener() {
@@ -57,7 +61,6 @@ public class ImportXMLActivity extends AppCompatActivity {
     }
 
     public void showDialogSuccess(View view) {
-
         Dialog dialog = new AlertDialog.Builder(this).setTitle("Success!").setCancelable(false)
                 .setMessage("File import complete")
                 .setPositiveButton( "OK", new DialogInterface.OnClickListener() {
