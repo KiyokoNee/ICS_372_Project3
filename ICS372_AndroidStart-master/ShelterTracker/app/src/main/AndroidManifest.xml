@@ -30,7 +30,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ImportFileActivity"
+            android:name=".ImportJSONActivity"
             android:exported="false"/>
         <activity
             android:name=".ImportXMLActivity"

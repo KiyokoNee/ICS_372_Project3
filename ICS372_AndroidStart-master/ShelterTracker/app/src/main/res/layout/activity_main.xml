@@ -34,14 +34,6 @@
         android:text="Enable/Disable Receiving" />
 
     <Button
-        android:id="@+id/show_dialog_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="showDialog"
-        android:text="Show Dialog"
-        android:textSize="30sp" />
-
-    <Button
         android:id="@+id/add_new_animal_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

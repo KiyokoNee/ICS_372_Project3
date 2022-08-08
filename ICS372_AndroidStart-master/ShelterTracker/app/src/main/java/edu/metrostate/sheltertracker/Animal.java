@@ -66,37 +66,4 @@ public class Animal {
                 ", Animal Weight=" + animal_weight + " " + weight_unit +
                 ", Receipt Date=" + receipt_date;
     }
-
-    /**
-     * Method responsible for collecting user input to create new Animal object
-     * @return (Animal) - user defined animal object
-     */
-    public static Animal createNewAnimal(ShelterList shelterMap) {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Please enter the animal type: ");
-        String type = scan.nextLine();
-        if (shelterMap.validAnimal(type)) {
-            try {
-                System.out.println("Please enter the animal name: ");
-                String name = scan.nextLine();
-                System.out.println("Please enter the animal ID: ");
-                String id = scan.nextLine();
-                System.out.println("Please enter the animal weight: ");
-                double weight = scan.nextDouble();
-                scan.nextLine();
-                System.out.println("Please enter the weight unit: ");
-                String unit = scan.nextLine();
-                System.out.println("Please enter the receipt date: ");
-                long receipt = scan.nextLong();
-                scan.nextLine();
-                return new Animal(type, name, id, weight, unit, receipt);
-            }catch (Exception e){
-                System.out.println("Animal could not be created\n");
-                return null;
-            }
-        } else {
-            System.out.println("Not a valid animal type.\n");
-            return null;
-        }
-    }
 }

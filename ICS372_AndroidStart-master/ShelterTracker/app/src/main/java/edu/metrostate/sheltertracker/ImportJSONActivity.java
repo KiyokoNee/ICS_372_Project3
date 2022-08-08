@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.File;
 
-public class ImportFileActivity extends AppCompatActivity {
+public class ImportJSONActivity extends AppCompatActivity {
     private String fileName;
 
     @Override
@@ -20,9 +20,8 @@ public class ImportFileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.import_json);
         ShelterList shelterList = (((ShelterTrackerApplication)getApplication()).getShelterList());
-
-
         final Button button = (Button) findViewById(R.id.submit_button);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -43,6 +42,7 @@ public class ImportFileActivity extends AppCompatActivity {
         });
 
     }
+
     public void showDialogError(View view) {
 
         Dialog dialog = new AlertDialog.Builder(this).setTitle("Error").setCancelable(false)

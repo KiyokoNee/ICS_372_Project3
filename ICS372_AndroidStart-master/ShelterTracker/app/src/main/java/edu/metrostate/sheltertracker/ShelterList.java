@@ -14,13 +14,6 @@ public class ShelterList {
     }
 
     /**
-     * Prints out the values of mapOfShelters directly to the console
-     */
-    public void showShelters(){
-        System.out.println(mapOfShelters.values());
-    }
-
-    /**
      * Returns true if a given shelter id is found in mapOfShelters.
      * @param id - (String) user selected shelter id
      * @return (boolean) - if a given shelter exists
@@ -53,26 +46,6 @@ public class ShelterList {
     public boolean validAnimal(String type){
         return type.equalsIgnoreCase("dog") || type.equalsIgnoreCase("cat") ||
                 type.equalsIgnoreCase("bird") || type.equalsIgnoreCase("rabbit");
-    }
-
-    public static boolean shelterSearch(String selected, ShelterList shelters){
-        if (shelters.containsShelter(selected)) {
-            return true;
-        } else {
-            System.out.println("Invalid shelter ID\n");
-        }
-        return false;
-    }
-
-    /**
-     * Method loops through all shelters in map and all animal objects in each shelter object
-     * and prints all to console.
-     */
-    public static void showAllAnimals (ShelterList shelterMap) {
-        List<Shelter> allShelters = new ArrayList<>(shelterMap.getShelters());
-        for (Shelter currentShelter : allShelters) {
-            System.out.println(currentShelter.showAnimals());
-        }
     }
 
     public List<Animal> getAllAnimals(){

@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void importJSON(View view){
-        Intent intent = new Intent(this, ImportFileActivity.class);
+        Intent intent = new Intent(this, ImportJSONActivity.class);
         startActivity(intent);
     }
 
@@ -52,18 +52,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void showDialog(View view) {
-
-        Dialog dialog = new AlertDialog.Builder(this).setTitle("My alert").setCancelable(false)
-                .setMessage("This is an alert that is shown when the button is pressed")
-                .setPositiveButton( "OK", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                dialog.dismiss();
-            }
-        }).create();
-
-        dialog.show();
-    }
     public void exit(View view){
         finish();
     }

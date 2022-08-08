@@ -27,10 +27,6 @@ public class Shelter {
         return animalList;
     }
 
-    public void setAnimalList(List<Animal> newList) {
-        animalList = newList;
-    }
-
     public String toString(){
         return shelterName + ": " + shelterID;
     }
@@ -63,37 +59,6 @@ public class Shelter {
     }
     public void setReceiving(boolean status){
         receiving = status;
-    }
-    /**
-     * Method to toggle isReceiving attribute of a Shelter object to receiving or not receiving based on
-     * boolean value.
-     * @param status - (boolean) true enables receiving, false disables
-     */
-    public void changeReceiving(boolean status) {
-        setReceiving(status);
-        if(status){
-            receiving = false;
-            System.out.println("Receiving disabled for shelter " + shelterID + "\n");
-        } else {
-            receiving = true;
-            System.out.println("Receiving enabled for shelter " + shelterID + "\n");
-        }
-    }
-    /**
-     * Method responsible for adding Animal object into previously created Shelter object
-     * @param newAnimal - (Animal) animal object to be added to shelter object
-     * @param selected - (String) shelter ID
-     */
-    public static void addUserCreatedAnimal(Animal newAnimal, String selected, ShelterList shelter){
-        try{
-            Shelter tempShelter = shelter.getShelter(selected);
-            List<Animal> tempList = tempShelter.getAnimalList();
-            tempList.add(newAnimal);
-            tempShelter.setAnimalList(tempList);
-            System.out.println("New Animal has been added.\n");
-        } catch (Exception e) {
-            System.out.println("Animal could not be added.\n");
-        }
     }
 
     public void addAnimal(Animal animal){

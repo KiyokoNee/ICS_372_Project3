@@ -72,7 +72,7 @@ public class AddAnimalActivity extends AppCompatActivity {
         Dialog dialog;
         if(shelter.isReceiving()){
             Animal newAnimal = new Animal(animal_Type, animal_Name, animal_ID, animal_weight, weight_unit, receipt_date);
-            Shelter.addUserCreatedAnimal(newAnimal, shelter.getShelterID(), (((ShelterTrackerApplication)getApplication()).getShelterList()));
+            shelter.addAnimal(newAnimal);
 
             if(shelter.getAnimalList().contains(newAnimal)){
                 dialog = new AlertDialog.Builder(this).setTitle("Adding Animal Status").setCancelable(false)

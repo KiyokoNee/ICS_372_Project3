@@ -13,7 +13,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.io.File;
 
 public class ImportXMLActivity extends AppCompatActivity {
-    private String fileName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +42,8 @@ public class ImportXMLActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
+
     public void showDialogError(View view) {
 
         Dialog dialog = new AlertDialog.Builder(this).setTitle("Error").setCancelable(false)
@@ -68,6 +67,4 @@ public class ImportXMLActivity extends AppCompatActivity {
                 }).create();
         dialog.show();
     }
-
-
 }
