@@ -73,19 +73,24 @@ public class UnitTest {
 
     @Test
     public void addDuplicateShelterTest(){
-        Map<String, Shelter> mapOfSheltersTest = new HashMap<>();
+        ShelterList mapOfSheltersTest = new ShelterList();
         Shelter testShelter = new Shelter("12345", "Original Shelter");
+        Shelter duplicateShelter = new Shelter("12345", "Duplicate Shelter");
 
         Shelter testShelter2 = new Shelter("54321");
-        assertEquals(mapOfSheltersTest.size(), 0);
+        assertEquals(mapOfSheltersTest.getShelterQuantity(), 0);
 
         //initial shelter added to map
-        mapOfSheltersTest.put(testShelter.getShelterID(), testShelter);
-        assertEquals(mapOfSheltersTest.size(), 1);
+        mapOfSheltersTest.addShelter(testShelter.getShelterID(), testShelter);
+        assertEquals(mapOfSheltersTest.getShelterQuantity(), 1);
 
         //additional unique shelter added to map
-        mapOfSheltersTest.put(testShelter2.getShelterID(), testShelter2);
-        assertEquals(mapOfSheltersTest.size(), 2);
+        mapOfSheltersTest.addShelter(testShelter2.getShelterID(), testShelter2);
+        assertEquals(mapOfSheltersTest.getShelterQuantity(), 2);
+
+        //attempt to add duplicate shelter
+        mapOfSheltersTest.addShelter(duplicateShelter.getShelterId(), duplicateShelter);
+        assertEquals(mapOfSheltersTest.getShelterQuantity(), 2);
 
     }
 }

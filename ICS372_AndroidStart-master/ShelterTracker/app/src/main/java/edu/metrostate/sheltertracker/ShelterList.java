@@ -10,7 +10,7 @@ public class ShelterList {
     }
 
     public void addShelter(String id, Shelter shelter){
-        mapOfShelters.put(id, shelter);
+        mapOfShelters.putIfAbsent(id, shelter);
     }
 
     /**
@@ -37,6 +37,10 @@ public class ShelterList {
      */
     public List<Shelter> getShelters(){
         return new ArrayList<>(mapOfShelters.values());}
+
+    public int getShelterQuantity(){
+        return mapOfShelters.size();
+    }
 
     /**
      * Checks whether a given animal type is supported.
