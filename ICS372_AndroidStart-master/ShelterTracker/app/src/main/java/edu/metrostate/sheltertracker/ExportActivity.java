@@ -7,8 +7,6 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.io.File;
-
 public class ExportActivity extends AppCompatActivity {
 
     @Override

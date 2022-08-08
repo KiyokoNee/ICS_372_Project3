@@ -1,7 +1,5 @@
 package edu.metrostate.sheltertracker;
 
-import java.util.Scanner;
-
 public class Animal {
     private final String animal_ID;
     private final String animal_Type;

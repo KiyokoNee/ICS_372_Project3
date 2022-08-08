@@ -3,13 +3,9 @@ package edu.metrostate.sheltertracker;
 import android.app.Application;
 import android.util.Log;
 
-import org.json.JSONArray;
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.util.ArrayList;
-import java.util.List;
 
 public class ShelterTrackerApplication extends Application {
 

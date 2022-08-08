@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import java.util.Collection;
 import java.util.List;
 
 public class ShelterListActivity extends AppCompatActivity {

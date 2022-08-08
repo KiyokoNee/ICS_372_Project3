@@ -13,7 +13,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.io.File;
 
 public class ImportJSONActivity extends AppCompatActivity {
-    private String fileName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
