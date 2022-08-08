@@ -32,10 +32,10 @@
         android:layout_marginBottom="10dp"
         android:background="#CCCCCC"
         android:ems="10"
-        android:hint="ex) MyShelterDoc.txt"
+        android:hint="ex) shelters.json"
         android:inputType="text"
         android:minHeight="48dp"
-        android:textColorHint="#455A64"/>
+        android:textColorHint="#455A64" />
 
     <Button
         android:id="@+id/submit_button"
