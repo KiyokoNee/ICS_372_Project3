@@ -13,7 +13,10 @@ import java.util.Map;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 public class UnitTest {
-
+    /**
+     * Test that receiving status is changed based on current boolean receiving status correctly when
+     * changeReceiving method is called
+     */
     @Test
     public void getReceivingStatusTest(){
         Shelter shelter = new Shelter("12345");
@@ -33,6 +36,9 @@ public class UnitTest {
 
     }
 
+    /**
+     * Test that shelters will only allow new animals to be added when shelter receiving status is true
+     */
     @Test
     public void addAnimalReceivingTest(){
         Shelter shelter = new Shelter("12345");
@@ -51,7 +57,9 @@ public class UnitTest {
         assertEquals(shelter.size(), 1);
 
     }
-
+    /**
+     *Test that shelter objects can be created with shelter ID alone and with BOTH shelter ID and name
+     */
     @Test
     public void addShelterMissingFieldsTest(){
         Shelter testShelter = new Shelter("12345");
@@ -67,6 +75,9 @@ public class UnitTest {
         assertEquals(testShelter.getShelterName(), "unlisted");
     }
 
+    /**
+     * Test that new shelters can only be created when shelter ID is not already in collection
+     */
     @Test
     public void addDuplicateShelterTest(){
         ShelterList mapOfSheltersTest = new ShelterList();

@@ -18,6 +18,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Add Animal Activity - add animal based on user's input
+ */
 
 public class AddAnimalActivity extends AppCompatActivity {
     private RadioGroup radioGroup = null;
@@ -28,6 +31,10 @@ public class AddAnimalActivity extends AppCompatActivity {
     private Shelter shelter;
     private final ArrayList<Shelter> shelterArrayList = new ArrayList<>();
 
+    /**
+     * Method once created display the activity_add_animal and populated the drop down menu for shelters and animal types.
+     * @param savedInstanceState
+     */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +51,12 @@ public class AddAnimalActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Method that get the user's input.
+     * If radioLB was selected then return the unit_weight as LB
+     * Else if radioKG is selected then return the unit_weight as KG
+     * @param view
+     */
     public void onRadioButtonClicked(View view) {
         if(view == radioLB){
             weight_unit = radioLB.getText().toString();
@@ -52,6 +65,10 @@ public class AddAnimalActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Method that once clicked, takes all the user's inputs and create an animal to the selected shelter.
+     * @param view
+     */
     public void onSubmitClicked(View view){
 
         EditText mEdit = findViewById(R.id.nameInput);
@@ -106,6 +123,9 @@ public class AddAnimalActivity extends AppCompatActivity {
         radioGroup.clearCheck();
     }
 
+    /**
+     * Method that populate the animal type dropdown list with animal types.
+     */
     public void fillTypeSpinner(){
         Spinner spinner = findViewById(R.id.type_spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.animal_array, android.R.layout.simple_spinner_item);
@@ -124,6 +144,9 @@ public class AddAnimalActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Method that populate the shelter dropdown list with shelters.
+     */
     public void fillShelterSpinner(){
         Spinner spinner2 = findViewById(R.id.shelter_spinner);
         spinner2.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, shelterArrayList));

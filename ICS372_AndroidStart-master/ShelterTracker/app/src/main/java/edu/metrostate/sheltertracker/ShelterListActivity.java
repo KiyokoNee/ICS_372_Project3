@@ -11,7 +11,10 @@ import android.widget.ListView;
 import java.util.List;
 
 public class ShelterListActivity extends AppCompatActivity {
-
+    /**
+     * Method - once button is clicked show the list of shelters
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

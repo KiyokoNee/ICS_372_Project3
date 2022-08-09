@@ -14,6 +14,10 @@ import java.util.List;
 
 public class ReceivingActivity extends AppCompatActivity {
 
+    /**
+     * Method that once button is clicked, will display a list of shelters.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +28,13 @@ public class ReceivingActivity extends AppCompatActivity {
 
         lv.setAdapter(new ShelterAdapter(this,shelters));
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            /**
+             * Method that once a shelter is selected, it will toggle the receiving status to false/true.
+             * @param parent
+             * @param view
+             * @param position
+             * @param id
+             */
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
@@ -39,6 +50,10 @@ public class ReceivingActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Method that show the dialog of when receiving status has been toggled.
+     * @param view
+     */
     public void showDialog(View view) {
 
         Dialog dialog = new AlertDialog.Builder(this).setTitle("Note:").setCancelable(false)
