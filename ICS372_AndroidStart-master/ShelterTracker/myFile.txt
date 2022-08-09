@@ -1,1 +1,0 @@
-{"shelter_roster":[{"shelter_receiving":true,"shelter_name":"Test_Shelter","animals":[{"animal_name":"TestAnimal","weight_unit":"kg","receipt_date":1111111111,"animal_id":"15dde","weight":2.6,"animal_type":"rabbit"}]}
